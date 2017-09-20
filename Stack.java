@@ -1,7 +1,5 @@
 package com.gmail.malynovskyiroman.javaOOP.Stack1;
 
-import java.util.Arrays;
-
 public class Stack {
     private int size;
     private Object[] elements;
@@ -17,7 +15,7 @@ public class Stack {
 
     public void addElement(Object object) {
         if (blackList.isBelongToBlackList(object)) {
-            System.out.println("Addition of class is prohibited. Class " + object.getClass().getSimpleName() + " in block list!");
+            System.out.println("Addition of this object is prohibited. Class " + object.getClass().getSimpleName() + " in block list!");
             return;
         } else if (top == size - 1) {
             System.out.println("Stack is full!");
@@ -29,10 +27,14 @@ public class Stack {
     }
 
     public Object removeElement() {
-        Object temp = elements[top];
-        elements[top] = null;
-        top--;
-        return temp;
+        if (top == -1) {
+            return "Stack is empty!";
+        } else {
+            Object temp = elements[top];
+            elements[top] = null;
+            top--;
+            return temp;
+        }
     }
 
     public Object getElement() {
@@ -54,4 +56,5 @@ public class Stack {
         }
         System.out.println();
     }
+
 }
