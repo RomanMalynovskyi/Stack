@@ -17,7 +17,7 @@ package com.gmail.malynovskyiroman.javaOOP.Stack1;
 public class Main {
 
     public static void main(String[] args) {
-        BlackList blackList = new BlackList();
+        BlackList<Class> blackList = new BlackList();
 
         blackList.addClassToBlackList(Integer.class);
 //        blackList.addClassToBlackList(String.class);
